@@ -1,0 +1,15 @@
+<div id="trip-header">
+	<div id="trip-description" class="container">
+		<div>{{tripDistance}} miles • {{tripCities}} cities • <a ng-href="{{tripMap}}">Map</a></div>
+	</div>
+</div>
+
+<div id="trip-photos" class="container">
+	<div class="stop-section" ng-repeat="stop in tripStops">
+		<div class="photos">
+		<div class="section-info">{{stop.name}}</div>
+		<a ng-repeat="photo in stop.photos" ng-href="{{photo.flickrURL}}"><div class="image" back-img="{{photo.imageURL}}"></div></a>
+		<div> 
+	</div>
+  </div>
+</div>
