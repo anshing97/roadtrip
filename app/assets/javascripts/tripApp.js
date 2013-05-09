@@ -1,6 +1,13 @@
 // create the trip app 
-var tripApp = angular.module('tripApp', ["ngResource", function($routeProvider, $locationProvider) {
 
+
+var tripApp = angular.module('tripApp', ['ngResource'])
+
+tripApp.config(['$locationProvider', function ($locationProvider) {
+  $locationProvider.html5Mode(true);
+}]);
+
+tripApp.config(['$routeProvider', function ($routeProvider) {  
   $routeProvider.when('/', {
     templateUrl: 'templates/form.html',
     controller: 'homeCtrl'
@@ -14,8 +21,6 @@ var tripApp = angular.module('tripApp', ["ngResource", function($routeProvider, 
   $routeProvider.otherwise({
     redirectTo: '/'
   });
-
-  $locationProvider.html5Mode(true);
 
 }]);
 
