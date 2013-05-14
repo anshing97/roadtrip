@@ -44,8 +44,8 @@ input {
     text-align: center;
     font-size: 24px; 
 
-    -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
-    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.075);
+    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.075);
 
     input[type="text"] {
         line-height: normal;
@@ -73,11 +73,32 @@ input {
     }
 }
 
+#speech {
+    background-color: #F2D541;
+    content: "\00a0";
+    display: block;
+    height: 30px;
+    width: 30px;
+    transform:             rotate( 45deg ) ;
+        -moz-transform:    rotate( 45deg ) ;
+        -ms-transform:     rotate( 45deg ) ;
+        -o-transform:      rotate( 45deg ) ;
+        -webkit-transform: rotate( 45deg ) ;
+
+    margin:-15px auto 0px auto;
+
+    -webkit-box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.03);
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.03);
+
+
+}
+
 
 #facing-car {
-    background-image:url('car.png');
+    background-image:url('car.svg');
+    background-repeat: no-repeat;
     width: 90px; 
-    height: 71px;
+    height: 74px;
     margin: 50px auto;     
 }
 
