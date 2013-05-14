@@ -107,10 +107,7 @@ input {
     background-color: #F2D541;
     font-weight: 300;
     font-size: 30px;
-
-    p {
-        line-height: 1.2em;
-    }
+    line-height: 1.2em;
 
     p:not(:last-child){
         margin-bottom: 30px;
