@@ -2,32 +2,56 @@
 
 body {
     font-family: 'Roboto Slab', serif;
-    font-size: 24px; 
-    font-weight: 700;
+    font-weight: 300;
+    padding-top: 100px;
+    background-image:url('background.png');
+
 }
 
 input {
 	width: 100px;
 }
 
+#title {
+
+    text-align: center;
+
+    #appname {
+        font-family: 'Playfair Display', serif;
+        font-size: 34px;
+        font-style: italic; 
+        font-weight: 900;
+        margin-bottom: 12px;
+        color: #444444;
+    }
+
+    #tagline {
+        font-weight: 100; 
+        font-size: 13px;
+        color: #444444;
+        margin-left: 5px;
+    }
+
+
+}
+
 #form {
 
-    position:absolute; 
-    top:50%; 
-    left:50%; 
-    margin-top:-3em;
-    margin-left:-13em;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    padding: 30px;
+    background-color: #F2D541;
+    text-align: center;
+    font-size: 24px; 
 
-    div:not(:first-child) {
-        margin-left: 308px;
-        margin-top: 18px;        
-    }
+    -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
 
     input[type="text"] {
         line-height: normal;
-        width: 230px;
+        width: 220px;
         font-family: 'Roboto Slab', serif;
-        font-weight: 700;
+        font-weight: 300;
         font-size: 24px;
 
         padding: 10px;
@@ -35,11 +59,10 @@ input {
         border: none;
         border-width: 0px; 
         border-radius: 5px;
-        background-color: #EEE;
+        background-color: #FFF;
 
         margin: -4px 0px 0px 5px;
 
-        color: #00A3D9;
     }
 
     // override focus
@@ -50,29 +73,27 @@ input {
     }
 }
 
-#trip-header {
-    background-color: #232323;
-    color: #fff;
 
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 100;
-
+#facing-car {
+    background-image:url('car.png');
+    width: 90px; 
+    height: 71px;
+    margin: 50px auto;     
 }
 
 #trip-description {
-    padding: 20px;
+    padding: 30px;
+    background-color: #F2D541;
+    font-weight: 300;
+    font-size: 30px;
 
-    div{
-        font-size: 18px;
-        font-weight: 300; 
+    p:not(:last-child){
+        margin-bottom: 30px;
     }
 
-    a {
-        color: #18b2ee;
-    }
+    margin-bottom: 90px;
+    -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.1);
 
 }
 
@@ -86,9 +107,14 @@ input {
     margin-bottom: 90px;
 }
 
+.no-image-gap {
+    line-height: 0px;
+}
+
 .section-info {
     padding-bottom: 20px;
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 700;    
 }
 
 .image {
@@ -97,4 +123,5 @@ input {
     display: inline-block;
     background-position: center; 
     margin-right: 1px;
+    margin-bottom: 1px; 
 }

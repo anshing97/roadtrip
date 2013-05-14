@@ -1,7 +1,22 @@
-<div id="form" class="container">
-	<form ng-submit="submitTrip(trip)">
-		<div>Show me some pictures from <input type="text" ng-model="trip.origin" placeholder="here"></input></div>
-		<div>to <input type="text" ng-model="trip.destination" placeholder="there"></input></div>
-		<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
-	</form>
+<div class="container">
+
+	<div id="title" class="row"> 
+		<div id="appname">Trip Photos</div>
+		<div id="tagline">See what's along the way</div>
+	</div>
+
+	<div class="row">		
+		<form id="form" class="span9 offset1" ng-submit="submitTrip(trip)">
+			<div ng-hide="loading">
+				<div>Let's go from <input type="text" ng-model="trip.origin" placeholder="here"></input> to <input type="text" ng-model="trip.destination" placeholder="there"></input></div>
+				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+			</div> 
+			<div ng-show="loading">
+				<p>Finding photos from {{trip.origin}} to {{trip.destination}}...</p>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<div id="facing-car"></div>
+	</div> 
 </div>

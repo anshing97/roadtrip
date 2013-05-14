@@ -24,9 +24,7 @@ tripApp.config(['$routeProvider', function ($routeProvider) {
 
 }]);
 
-tripApp.service('DataService', function() {
-
-  var saved_data = {};
+tripApp.service('DataService', ['$location', 'StopsResource', function ($location, StopsResource) {
 
   return {
 
@@ -36,17 +34,24 @@ tripApp.service('DataService', function() {
 
     getData:function () {
       return saved_data;
+    },
+
+    hasData:function () {
+      return (typeof saved_data !== "undefined" );
     }
 
   };
 
-});
+}]);
 
 
 // stop resource item 
 tripApp.factory('StopsResource', [ '$resource', function ($resource) {
-	return $resource('/stops');
+	var stopResource = $resource('/stops/:job');
+
+  return stopResource;
 }]);
+
 
 tripApp.directive('backImg', function(){
     return function(scope, element, attrs){

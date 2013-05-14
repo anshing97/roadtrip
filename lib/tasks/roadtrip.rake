@@ -7,7 +7,7 @@ namespace :roadtrip do
     # filter params 
     params = {}
     params[:origin] = "Brooklyn, NY"
-    params[:destination] = "Tucson, AZ"
+    params[:destination] = "Jersey City, NJ"
 
     # get the directions to go there via google maps
     directions = GoogleDirections.new(params[:origin],params[:destination])
@@ -80,7 +80,6 @@ namespace :roadtrip do
       args[:has_geo] = true
       args[:sort] = "relevance"
       args[:per_page] = 20
-      args[:extras] = "url_n"
 
       args[:text] = place
 
@@ -93,7 +92,7 @@ namespace :roadtrip do
 
         photos = photos_found.map do | p | 
           data = {}
-          data[:imageURL] = FlickRaw.url p 
+          data[:imageURL] = FlickRaw.url_m p 
           data[:flickrURL] = FlickRaw.url_photopage p
           data
         end 
@@ -116,7 +115,7 @@ namespace :roadtrip do
     end
 
     response = {}
-    response[:towns] = places_and_photos.compact!
+    response[:towns] = places_and_photos.compact
     response[:distance] = distance 
 
     first = true
@@ -155,17 +154,5 @@ namespace :roadtrip do
 
   end
 
-desc "Direction test"
-  task :string => :environment do 
-
-    all_places = ["New York, NY", "San Diego, CA", "San Francisco, CA"];
-
-    first = true
-
-    # what 
-    strings = all_places.map { | p | if first then first = false; "from:" + p else "to:" + p end }
-    puts strings.join(' ').split(' ').join('+').to_json
-
-    end  
 
 end 
