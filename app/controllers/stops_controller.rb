@@ -30,7 +30,7 @@ class StopsController < ApplicationController
     # loop through to examine the data
     all_places = all_coordinates.map do | coordinate | 
 
-      # be nice to geocoder, sleep between requests
+      # be nice to geocoder, sleep between request
       sleep(0.2)
 
       location = coordinate[:latitude].to_s + ", " + coordinate[:longitude].to_s
@@ -58,7 +58,8 @@ class StopsController < ApplicationController
     end 
 
     # remove nils and sort out just distinct places
-    all_places.compact!.uniq! { | place | place.formatted_address } 
+    all_places.compact!
+    all_places.uniq! { | place | place.formatted_address } 
 
     # examime what we have right now 
     # all_places.each do | place | 
