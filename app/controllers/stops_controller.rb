@@ -31,7 +31,7 @@ class StopsController < ApplicationController
     all_places = all_coordinates.map do | coordinate | 
 
       # be nice to geocoder, sleep between request
-      sleep(0.05)
+      sleep(0.1)
 
       location = coordinate[:latitude].to_s + ", " + coordinate[:longitude].to_s
 
