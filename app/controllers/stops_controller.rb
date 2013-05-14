@@ -30,6 +30,9 @@ class StopsController < ApplicationController
     # loop through to examine the data
     all_places = all_coordinates.map do | coordinate | 
 
+      # be nice to geocoder, sleep between requests
+      sleep(0.2)
+
       location = coordinate[:latitude].to_s + ", " + coordinate[:longitude].to_s
 
       place_names = Geocoder.search(location)
