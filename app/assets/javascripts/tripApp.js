@@ -44,7 +44,7 @@ tripApp.service('DataService', ['$q', '$timeout', '$location', 'StopsResource', 
           // if working, we query again 
           // if failed, we reject 
 
-          window.console.log(" success ", success);
+          // window.console.log(" success ", success);
 
           if ( success.status == "complete" ) {
 
