@@ -14,6 +14,8 @@ gem 'flickraw'
 gem 'google_directions'
 gem 'crack'
 gem 'thin'
+gem 'sidekiq'
+gem 'sidekiq_status'
 
 # Gems used only for assets and not required
 # in production environments by default.
